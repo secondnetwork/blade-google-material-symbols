@@ -1,0 +1,40 @@
+name: Update Material Symbols
+
+on:
+  # Ermöglicht das manuelle Starten des Workflows über die GitHub UI
+  workflow_dispatch:
+
+  # Führt den Workflow jeden Sonntag um 03:00 Uhr aus
+  schedule:
+    - cron: '0 3 * * 0'
+
+jobs:
+  update-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout des Repository-Codes
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Bun einrichten (ersetzt setup-node)
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      # 3. Abhängigkeiten mit Bun installieren
+      - name: Install dependencies
+        run: bun install
+
+      # 4. Das Update-Skript mit Bun ausführen
+      - name: Run icon update script
+        run: bun run icons:update
+
+      # 5. Änderungen committen und pushen (bleibt unverändert)
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Update Material Symbols icons"
+          file_pattern: "resources/svg/**/*.svg" # Nur SVG-Dateien im svg-Ordner committen
+          commit_user_name: "GitHub Actions Bot"
+          commit_user_email: "actions@github.com"
+          commit_author: "GitHub Actions Bot <actions@github.com>"
