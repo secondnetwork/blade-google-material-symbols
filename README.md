@@ -30,9 +30,9 @@ This package provides three component sets, identified by unique prefixes. The `
 
 | Style     | Prefix    | Example Usage (Outlined)        | Example Usage (Filled)            |
 | :-------- | :-------- | :------------------------------ | :-------------------------------- |
-| **Outlined**  | `gms`     | `<x-gms-home />`           | `<x-gms-home-fill />`        |
-| **Rounded**   | `gms_r`   | `<x-gms_r-home />`         | `<x-gms_r-home-fill />`      |
-| **Sharp**     | `gms_s`   | `<x-gms_s-home />`         | `<x-gms_s-home-fill />`      |
+| **Outlined**  | `gmso`     | `<x-gmso-home />`           | `<x-gmso-home-fill />`        |
+| **Rounded**   | `gmsr`   | `<x-gmsr-home />`         | `<x-gmsr-home-fill />`      |
+| **Sharp**     | `gmss`   | `<x-gmss-home />`         | `<x-gmss-home-fill />`      |
 
 ### How the "Filled" Style Works
 
@@ -41,19 +41,19 @@ Instead of providing a separate set for filled icons, you can get the filled ver
 **Outlined Example:**
 ```blade
 {{-- Renders the outlined home icon --}}
-<x-gms-home />
+<x-gmso-home />
 
 {{-- Renders the filled home icon --}}
-<x-gms-home-fill />
+<x-gmso-home-fill />
 ```
 
 **Rounded Example:**
 ```blade
 {{-- Renders the rounded settings icon --}}
-<x-gms_r-settings />
+<x-gmsr-settings />
 
 {{-- Renders the filled rounded settings icon --}}
-<x-gms_r-settings-fill />
+<x-gmsr-settings-fill />
 ```
 
 ### Styling
@@ -62,10 +62,10 @@ You can easily style the icons by passing attributes like `class`, `width`, and 
 
 ```blade
 {{-- Using Tailwind CSS classes for size and color --}}
-<x-gms-o-check-circle class="size-8 text-green-500" />
+<x-gmso-check-circle class="size-8 text-green-500" />
 
 {{-- Setting explicit width and height --}}
-<x-gms_r-delete-fill class="text-red-600" width="24" height="24" />
+<x-gmsr-delete-fill class="text-red-600" width="24" height="24" />
 ```
 
 ## Configuration
@@ -84,16 +84,16 @@ This will create a `config/blade-google-material-symbols.php` file in your proje
 return [
     'sets' => [
         'material-outlined' => [
-            'path' => __DIR__.'/../vendor/secondnetwork/blade-google-material-symbols/resources/svg/material-outlined',
-            'prefix' => 'gms', // Change this to your preferred prefix
+            'path' => __DIR__.'/../resources/svg/material-outlined',
+            'prefix' => 'gmso',
         ],
         'material-rounded' => [
-            'path' => __DIR__.'/../vendor/secondnetwork/blade-google-material-symbols/resources/svg/material-rounded',
-            'prefix' => 'gms_r', // And this one
+            'path' => __DIR__.'/../resources/svg/material-rounded',
+            'prefix' => 'gmsr',
         ],
         'material-sharp' => [
-            'path' => __DIR__.'/../vendor/secondnetwork/blade-google-material-symbols/resources/svg/material-sharp',
-            'prefix' => 'gms_s', // And this one
+            'path' => __DIR__.'/../resources/svg/material-sharp',
+            'prefix' => 'gmss',
         ],
     ],
 

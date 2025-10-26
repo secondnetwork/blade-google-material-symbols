@@ -14,15 +14,15 @@ return [
     'sets' => [
         'material-outlined' => [
             'path' => __DIR__.'/../resources/svg/material-outlined',
-            'prefix' => 'gms',
+            'prefix' => 'gmso',
         ],
         'material-rounded' => [
             'path' => __DIR__.'/../resources/svg/material-rounded',
-            'prefix' => 'gms_r',
+            'prefix' => 'gmsr',
         ],
         'material-sharp' => [
             'path' => __DIR__.'/../resources/svg/material-sharp',
-            'prefix' => 'gms_s',
+            'prefix' => 'gmss',
         ],
     ],
 
