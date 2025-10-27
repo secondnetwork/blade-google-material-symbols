@@ -1,15 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "icons:update:outlined": "rimraf resources/svg/material-outlined && copyfiles -f \"node_modules/@material-symbols/svg-400/outlined/*.svg\" resources/svg/material-outlined",
-    "icons:update:filled": "rimraf resources/svg/material-filled && copyfiles -f \"node_modules/@material-symbols/svg-400/filled/*.svg\" resources/svg/material-filled",
-    "icons:update:rounded": "rimraf resources/svg/material-rounded && copyfiles -f \"node_modules/@material-symbols/svg-400/rounded/*.svg\" resources/svg/material-rounded",
-    "icons:update:sharp": "rimraf resources/svg/material-sharp && copyfiles -f \"node_modules/@material-symbols/svg-400/sharp/*.svg\" resources/svg/material-sharp",
-
-    "icons:update": "bun run icons:update:outlined && bun run icons:update:filled && bun run icons:update:rounded && bun run icons:update:sharp"
+    "icons:update:outlined": "rimraf resources/svg/material-outlined && copyfiles -f \"node_modules/@material-symbols/svg-500/outlined/*.svg\" resources/svg/material-outlined",
+    "icons:update:rounded": "rimraf resources/svg/material-rounded && copyfiles -f \"node_modules/@material-symbols/svg-500/rounded/*.svg\" resources/svg/material-rounded",
+    "icons:update:sharp": "rimraf resources/svg/material-sharp && copyfiles -f \"node_modules/@material-symbols/svg-500/sharp/*.svg\" resources/svg/material-sharp",
+    "icons:update": "bun run icons:update:outlined && bun run icons:update:rounded && bun run icons:update:sharp"
   },
   "dependencies": {
-    "@material-symbols/svg-400": "^0.38.0",
+    "@material-symbols/svg-500": "^0.38.0",
     "copyfiles": "^2.4.1",
     "rimraf": "^6.0.1"
   }
