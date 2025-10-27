@@ -8,6 +8,10 @@ A Blade icon pack for the [Google Material Symbols](https://fonts.google.com/ico
 
 This package provides three primary icon styles: **Outlined**, **Rounded**, and **Sharp**. The **Filled** style is cleverly integrated by appending a `-fill` suffix to any icon name.
 
+## ⚠️ Important Notice
+
+Please note: In the current version, the icons are **only accessible via the `@svg()` directive** (or the `{{ svg() }}` helper) provided by `blade-ui-kit/blade-icons`. The previous component syntax (e.g., `<x-gmso-home />`) is not functional at this time. We are actively working to restore this functionality in a future update.
+
 ## Requirements
 
 - PHP 8.1+
@@ -26,13 +30,13 @@ The package will automatically register itself.
 
 ## Usage
 
-This package provides three component sets, identified by unique prefixes. The `Outlined` set is the default and has the shortest prefix.
+Use the `@svg()` or `{{ svg() }}` directive to render an icon. The icons are identified by a prefix corresponding to their style.
 
-| Style     | Prefix    | Example Usage (Outlined)        | Example Usage (Filled)            |
-| :-------- | :-------- | :------------------------------ | :-------------------------------- |
-| **Outlined**  | `gmso`     | `<x-gmso-home />`           | `<x-gmso-home-fill />`        |
-| **Rounded**   | `gmsr`   | `<x-gmsr-home />`         | `<x-gmsr-home-fill />`      |
-| **Sharp**     | `gmss`   | `<x-gmss-home />`         | `<x-gmss-home-fill />`      |
+| Style     | Prefix | Example (Outlined)        | Example (Filled)            |
+| :-------- | :----- | :------------------------ | :-------------------------- |
+| **Outlined**  | `gmso` | `@svg('gmso-home')`       | `@svg('gmso-home-fill')`    |
+| **Rounded**   | `gmsr` | `@svg('gmsr-home')`       | `@svg('gmsr-home-fill')`    |
+| **Sharp**     | `gmss` | `@svg('gmss-home')`       | `@svg('gmss-home-fill')`    |
 
 ### How the "Filled" Style Works
 
@@ -41,31 +45,31 @@ Instead of providing a separate set for filled icons, you can get the filled ver
 **Outlined Example:**
 ```blade
 {{-- Renders the outlined home icon --}}
-<x-gmso-home />
+@svg('gmso-home')
 
 {{-- Renders the filled home icon --}}
-<x-gmso-home-fill />
+@svg('gmso-home-fill')
 ```
 
 **Rounded Example:**
 ```blade
 {{-- Renders the rounded settings icon --}}
-<x-gmsr-settings />
+@svg('gmsr-settings')
 
 {{-- Renders the filled rounded settings icon --}}
-<x-gmsr-settings-fill />
+@svg('gmsr-settings-fill')
 ```
 
 ### Styling
 
-You can easily style the icons by passing attributes like `class`, `width`, and `height` directly to the component.
+You can easily style the icons by passing an array of attributes like `class`, `width`, and `height` as the second parameter to the directive.
 
 ```blade
 {{-- Using Tailwind CSS classes for size and color --}}
-<x-gmso-check-circle class="size-8 text-green-500" />
+@svg('gmso-check-circle', ['class' => 'size-8 text-green-500'])
 
 {{-- Setting explicit width and height --}}
-<x-gmsr-delete-fill class="text-red-600" width="24" height="24" />
+@svg('gmsr-delete-fill', ['class' => 'text-red-600', 'width' => '24', 'height' => '24'])
 ```
 
 ## Configuration
