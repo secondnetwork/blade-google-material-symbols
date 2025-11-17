@@ -12,6 +12,9 @@ jobs:
   update-icons:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      
     steps:
       # 1. Checkout des Repository-Codes
       - name: Checkout repository
